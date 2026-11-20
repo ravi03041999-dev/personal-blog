@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Ravin</title>
+  <meta name="description" content="Notes on web development, databases, tooling and shipping software." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='10' fill='%236d28d9'/><text x='16' y='22.5' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='17' fill='%23f5f1e8'>R.</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      const t = sessionStorage.getItem("theme") || "light";
+      document.documentElement.dataset.theme = t;
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="blog">
+  <header class="nav" id="topbar">
+    <a class="nav-logo" href="index.html" aria-label="Home">R<span>.</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a class="active" href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu"></button>
+      <a class="btn btn-primary btn-sm" href="index.html#contact">Let's talk</a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <header class="page-head">
+      <span class="sec-num">(blog) — <span id="post-count"></span></span>
+      <h1>Notes &amp; <span class="hl">writing</span></h1>
+      <p>Notes on building software: web development, databases, tooling, and the habits that help me ship.</p>
+    </header>
+
+    <div class="toolbar">
+      <label class="search">
+        <span class="t-prompt">Search</span>
+        <span class="sr-only">Search posts</span>
+        <input id="search" type="search" placeholder="search posts…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+      <div class="tags" id="tag-filter"></div>
+    </div>
+
+    <div class="rows" id="post-list"></div>
+  </main>
+
+  <footer class="footer container">
+    <span>© <span data-year></span> <span data-fullname></span></span>
+    <span class="mono"><span id="clock">--:--</span> · Malaysia</span>
+    <div class="footer-links" data-socials></div>
+  </footer>
+
+  <a class="whatsapp-fab" id="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"></a>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

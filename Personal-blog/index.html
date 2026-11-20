@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ravin — Senior WordPress / Web Developer</title>
+  <meta name="description" content="Portfolio of Ravindran Genesan (Ravin), a Malaysian Senior WordPress / Web Developer building clean, responsive WordPress sites and web apps." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='10' fill='%236d28d9'/><text x='16' y='22.5' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='17' fill='%23f5f1e8'>R.</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      const t = sessionStorage.getItem("theme") || "light";
+      document.documentElement.dataset.theme = t;
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home" class="is-loading">
+  <!-- Splash screen -->
+  <div class="splash" id="splash" role="status" aria-live="polite" aria-label="Loading">
+    <div class="splash-inner">
+      <div class="splash-code" aria-label="Ravindran Genesan — Senior WordPress / Web Developer">
+        <div class="splash-code-bar" aria-hidden="true"><i></i><i></i><i></i><span>ravin.js</span></div>
+        <pre aria-hidden="true"><code id="splash-code"></code></pre>
+      </div>
+      <div class="splash-bar" aria-hidden="true"><span id="splash-fill"></span></div>
+      <div class="splash-meta" aria-hidden="true"><span>Loading portfolio</span><span id="splash-pct">0%</span></div>
+    </div>
+  </div>
+  <!-- Floating pill nav -->
+  <header class="nav" id="topbar">
+    <a class="nav-logo" href="#top" aria-label="Home">R<span>.</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu"></button>
+      <a class="btn btn-primary btn-sm" href="#contact">Let's talk</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-top reveal">
+        <span class="status"><i></i> Available for freelance &amp; full-time</span>
+        <span class="mono muted" id="hero-local"></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line"><span>Hi, I'm Ravin</span></span>
+        <span class="line"><span><span class="hero-pill"><img id="hero-photo" alt="" /></span>a <span class="hl">WordPress</span></span></span>
+        <span class="line"><span>&amp; web developer.</span></span>
+      </h1>
+      <div class="hero-bottom reveal">
+        <p class="hero-lead" id="tagline"></p>
+        <div class="hero-stats" id="stats"></div>
+        <a class="spin-badge" href="#work" aria-label="Scroll to work">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+            <text><textPath href="#circle">scroll to explore • selected work • </textPath></text>
+          </svg>
+          <span>↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Client ticker -->
+    <div class="ticker" aria-label="Clients">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+
+    <!-- Featured work: stacking cards -->
+    <section class="section container" id="work">
+      <div class="sec-head reveal">
+        <span class="sec-num">(01)</span>
+        <h2 class="sec-title">Selected <span class="hl">work</span></h2>
+        <p class="sec-sub">A few recent websites I've built and looked after — government, healthcare, consumer brands and more.</p>
+      </div>
+      <div class="stack" id="stack"></div>
+    </section>
+
+    <!-- More work: hover list -->
+    <section class="section section--flush container" id="more-work">
+      <div class="sec-head sec-head--row reveal">
+        <h3 class="sec-title sec-title--sm">More projects</h3>
+        <span class="mono muted" id="more-count"></span>
+      </div>
+      <div class="list reveal" id="more-list"></div>
+      <div class="hover-preview" id="hover-preview" aria-hidden="true"><img alt="" /></div>
+    </section>
+
+    <!-- Services bento -->
+    <section class="section container" id="services">
+      <div class="sec-head reveal">
+        <span class="sec-num">(02)</span>
+        <h2 class="sec-title">What I <span class="hl">do</span></h2>
+        <p class="sec-sub">End-to-end website work — from the first Figma frame to DNS records and monthly care.</p>
+      </div>
+      <div class="bento" id="bento"></div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section container" id="experience">
+      <div class="split">
+        <div class="split-aside reveal">
+          <span class="sec-num">(03)</span>
+          <h2 class="sec-title">Experience &amp; <span class="hl">education</span></h2>
+          <a class="btn btn-outline" id="cv-link" target="_blank" rel="noopener">Download CV ↗</a>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- Skills band -->
+    <div class="ticker ticker--alt" aria-label="Skills">
+      <div class="ticker-track" id="skills-ticker"></div>
+    </div>
+
+    <!-- About -->
+    <section class="section container" id="about">
+      <div class="about">
+        <figure class="about-photo reveal">
+          <img id="about-photo" alt="" />
+          <figcaption><strong data-fullname></strong><span data-role></span></figcaption>
+        </figure>
+        <div class="about-body reveal">
+          <span class="sec-num">(04)</span>
+          <h2 class="sec-title">About <span class="hl">me</span></h2>
+          <div id="about-text"></div>
+          <div class="chips" id="skill-chips"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container" id="faq">
+      <div class="split">
+        <div class="split-aside reveal">
+          <span class="sec-num">(05)</span>
+          <h2 class="sec-title">Good <span class="hl">questions</span></h2>
+          <p class="sec-sub">Things people usually ask before we work together.</p>
+        </div>
+        <div class="accordion reveal" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section container" id="writing">
+      <div class="sec-head sec-head--row reveal">
+        <div>
+          <span class="sec-num">(06)</span>
+          <h2 class="sec-title">From the <span class="hl">blog</span></h2>
+        </div>
+        <a class="btn btn-outline" href="blog.html">All posts ↗</a>
+      </div>
+      <div class="post-grid" id="latest-posts"></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="container" id="contact">
+      <div class="cta reveal">
+        <div class="cta-orb" aria-hidden="true"></div>
+        <span class="mono cta-kicker">(07) — Contact</span>
+        <h2 class="cta-title">Got a website in mind?<br /><span class="cta-accent">Let's build it.</span></h2>
+        <div class="cta-actions">
+          <button class="btn btn-light" id="copy-email" type="button"><span data-email-text></span><small>copy</small></button>
+          <a class="btn btn-ghost-light" id="cta-whatsapp" target="_blank" rel="noopener">WhatsApp ↗</a>
+          <a class="btn btn-ghost-light" id="cta-linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span>© <span data-year></span> <span data-fullname></span></span>
+    <span class="mono"><span id="clock">--:--</span> · Malaysia</span>
+    <div class="footer-links" data-socials></div>
+  </footer>
+
+  <a class="whatsapp-fab" id="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"></a>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
